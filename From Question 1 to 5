@@ -1,0 +1,174 @@
+Question No 1:
+
+#include <stdio.h>
+
+int main() {
+    // Declare variables
+    int A, B, C;
+
+    // Input three numbers from the user
+    printf("Enter the value of A: ");
+    scanf("%d", &A);
+
+    printf("Enter the value of B: ");
+    scanf("%d", &B);
+
+    printf("Enter the value of C: ");
+    scanf("%d", &C);
+
+    // Find the largest number
+    int largest = A;  // Assume A is the largest initially
+
+    if (B > largest) {
+        largest = B;  // Update if B is larger
+    }
+
+    if (C > largest) {
+        largest = C;  // Update if C is larger
+    }
+
+    // Print the result
+    printf("The largest number is: %d\n", largest);
+
+    return 0;
+}
+
+------------------------------------
+Question 2:
+
+#include <stdio.h>
+
+// Function to calculate the factorial
+unsigned long long factorial(int N) {
+    if (N == 0 || N == 1) {
+        return 1; // 0! and 1! are both 1
+    } else {
+        return N * factorial(N - 1); // N! = N * (N-1)!
+    }
+}
+
+int main() {
+    // Declare variable
+    int N;
+
+    // Input the number from the user
+    printf("Enter a non-negative integer N: ");
+    scanf("%d", &N);
+
+    // Check if the input is non-negative
+    if (N < 0) {
+        printf("Please enter a non-negative integer.\n");
+    } else {
+        // Calculate and print the factorial
+        unsigned long long result = factorial(N);
+        printf("The factorial of %d is: %llu\n", N, result);
+    }
+
+    return 0;
+}
+
+---------------------------------
+Question No 3:
+
+#include <stdio.h>
+
+int main() {
+    // Iterate from 1000 to 2000
+    for (int i = 1000; i <= 2000; i++) {
+        // Check if the number is even
+        if (i % 2 == 0) {
+            // Print the even number
+            printf("%d\n", i);
+        }
+    }
+
+    return 0;
+}
+
+-----------------------------------
+
+Question No 4
+
+#include <stdio.h>
+
+// Function to check if a number is a palindrome
+int isPalindrome(int num) {
+    int originalNum = num;
+    int reversedNum = 0;
+
+    // Reverse the number
+    while (num > 0) {
+        int digit = num % 10;
+        reversedNum = reversedNum * 10 + digit;
+        num /= 10;
+    }
+
+    // Check if the reversed number is equal to the original number
+    return originalNum == reversedNum;
+}
+
+int main() {
+    // Declare variable
+    int number;
+
+    // Input the number from the user
+    printf("Enter a number: ");
+    scanf("%d", &number);
+
+    // Check if the number is a palindrome
+    if (isPalindrome(number)) {
+        printf("%d is a palindrome number.\n", number);
+    } else {
+        printf("%d is not a palindrome number.\n", number);
+    }
+
+    return 0;
+}
+
+-----------------------------
+
+Question No 5:
+
+#include <stdio.h>
+#include <math.h>
+
+// Function to calculate the factorial of a number
+unsigned long long factorial(int n) {
+    if (n == 0 || n == 1) {
+        return 1;
+    } else {
+        return n * factorial(n - 1);
+    }
+}
+
+// Function to calculate the sum of the series
+double calculateSeriesSum(double x, int terms) {
+    double sum = 0;
+
+    for (int i = 0; i < terms; i++) {
+        sum += pow(x, i) / factorial(i);
+    }
+
+    return sum;
+}
+
+int main() {
+    // Declare variables
+    double x;
+    int terms;
+
+    // Input values from the user
+    printf("Enter the value of x: ");
+    scanf("%lf", &x);
+
+    printf("Enter the number of terms in the series: ");
+    scanf("%d", &terms);
+
+    // Calculate and display the sum of the series
+    double result = calculateSeriesSum(x, terms);
+    printf("Sum of the series: %lf\n", result);
+
+    return 0;
+}
+
+-------------
